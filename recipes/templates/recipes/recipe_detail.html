@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Receitas</title>
+    <title>Detalhe da Receita</title>
     <style>
         body {
             font-family: Arial, sans-serif; 
@@ -47,15 +47,18 @@
     <div class="container">
         <a href="{% url 'recipe_list' %}" class="back-link">Voltar para a lista de receitas</a>
 
-        <h1>{{ receita.titulo}}</h1>
-        {% if receita.imagem %}
-            <img src="{{ receita.imagem.url }}" alt="{{ receita.titulo }}" class="img">
+        <h1>{{ recipe.title }}</h1>
+        {% if recipe.image %}
+            <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="img">
         {% endif %}
 
-        <p><strong>Tempo de preparo:</strong> {{ receita.tempo_preparo }} minutos</p>
+        <p><strong>Tempo de preparo:</strong> {{ recipe.cooking_time }} minutos</p>
 
         <h2>Ingredientes:</h2>
-        <p>{{ receita.instructions }}</p>
+        <p>{{ recipe.ingredients }}</p>
+
+        <h2>Instruções:</h2>
+        <p>{{ recipe.instructions }}</p>
 
         <a href="{% url 'recipe_list' %}" class="back-link">Voltar para a lista de receitas</a>
     </div>

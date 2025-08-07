@@ -82,27 +82,6 @@
 </head>
 
 <body>
-    </div>
-
-    <div class="container">
-        <h1>Receitas Cadastradas</h1>
-        {% for recipe in recipes %}
-            <div class="recipe-item">
-                <div>
-                    <h2>{{ recipe.title }}</h2>
-                    <p><strong>Tempo de preparo:</strong> {{ recipe.cooking_time }} minutos</p>
-                    <p><strong>Ingredientes:</strong> {{ recipe.ingredients }}</p>
-                    <p><strong>Instruções:</strong> {{ recipe.instructions }}</p>
-                </div>
-            </div>
-            <hr>
-        {% empty %}
-            <p>Nenhuma receita cadastrada.</p>
-        {% endfor %}
-    </div>
-</body>
-
-<body>
     <div class="container">
         <h1>Receitas Cadastradas</h1>
         {% for recipe in recipes %}
@@ -113,7 +92,7 @@
             <div class="recipe-content">
                 <h2><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></h2>
                 <p><strong>Tempo de preparo:</strong> {{ recipe.cooking_time }} minutos</p>
-                <P><strong>Tempo de preparo:</strong> {{ recipe.ingredients }}</P>
+                <p><strong>Tempo de preparo:</strong> {{ recipe.ingredients }}</p>
                 <p><strong>Instruções:</strong> {{ recipe.instructions }}</p>
             </div>
         </div>
